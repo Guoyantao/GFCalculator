@@ -1,3 +1,7 @@
+#!/usr/bin/python
+
+# Global Forest Change calculator for provided species' distributions maps
+
 import csv
 import logging
 import time
