@@ -7,6 +7,7 @@
   - [Usage](#usage)
   - [Input](#input)
   - [Algorithm](#algorithm)
+  - [Credits](#credits)
 
 ## Overview
 The script uses Hansen et al. (2013) Global Forest Change map in conjunction with Google Earth Engine to calculate forest cover in years 2000 - 2012 for a given set of species' distribution maps within provided altitude limits. 
@@ -65,3 +66,14 @@ The actual algorithm calculates forest loss for each year separately - the princ
 From the forest loss one can infer habitat loss for forest-dependent species, but this part is beyond scope of the presented script. The described procedure is applied to all species as illustrated on a [flowchart](https://en.wikipedia.org/wiki/Flowchart) below:
 
 ![diagram](algorithm.png?token=AFPv1fVwT39JenrwQi6h3yTRPbfXMdiQks5WE5piwA%3D%3D)
+
+## Credits
+* Lukasz Tracewski
+* Graeme Buchanan
+* Stuart Butchart
+* Moreno Di Marco
+* Francesco Ficetola
+* Carlo Rondinini
+* Andy Symes
+* Hannah Wheatley
+* Alison Beresford
