@@ -3,6 +3,7 @@
 ## Contents
   - [Overview](#overview)
   - [Global Forest Change map](#global-forest-change-map)
+  - [Google Earth Engine](#google-earth-engine)
   - [Basics](#basics)
   - [Usage](#usage)
   - [Input](#input)
