@@ -11,10 +11,11 @@ GFC map is composed of several bands (layers). Each layer is a separate image th
 * **loss**: pixel has value 1 if loss ever occurred during the study period.
 * **gain**: pixel has value 1 if gain ever occurred during the study period.
 * **lossyear**: value of a pixel denotes in which year loss occurred, starting with 2000. Ino other words, if pixel has value 5, then it means that the deforestation event occurred in 2005. 
-It should be noted that Hansen et al. in their work used Food and Agriculture Organisation (UN) definition of a tree: any vegetation taller than 5 metres. In consequence, the GFC map captures as tree also any sort of plantations that happen to be taller than 5 metres. Although here we are using "trees" and "forest" interchangeably
+
+It should be noted that Hansen et al. in their work used Food and Agriculture Organisation (UN) definition of a tree: any vegetation taller than 5 metres. In consequence, the GFC map captures as forest also any sort of plantations that happen to be taller than 5 metres. Although here we are using "trees" and "forest" interchangeably, it is important to stress that definition of "trees" does not imply ecological value. 
 
 ## Usage
-The species' distribution maps are stored on Google Maps Engine (GME) server. Unfortunately GME does provide an option to share rasters publically and therefore running the script as-in will not succeed. Aim of sharing this code is to demonstrate how the calculations can be performed.
+The species' distribution maps are stored on Google Maps Engine (GME) server. Unfortunately GME does provide an option to share rasters publically and therefore running the script as-is will not succeed. Aim of sharing this code is to demonstrate how the calculations can be performed.
 
 ## Input
 Required input:
@@ -22,6 +23,18 @@ Required input:
 * altitude_filename: comma-delimeted file in format species, min. altitude, max. altitude
 
 ## Algorithm
-The algorithm of calculating tree cover in 2000 and forest loss is straightforward, since all the hard labour has already been done for us by Hanen et al., i.e. identifying trees and deforestation events from Landsat imagery. The Global Forest Change map 
+The algorithm of calculating tree cover in 2000 and forest loss is straightforward, since all the hard labour has already been done for us by Hanen et al., i.e. quantification of forest cover and identification of deforestation events from Landsat imagery. 
+
+Put simply, our script just counts GFC pixels within distribution of a species. Let's take as an example *Bubo sumatranus*, a [barred eagle-owl](https://en.wikipedia.org/wiki/Barred_eagle-owl). First, we load its Extent Of Occurance (EOO) - a distribution map of the species:
+
+![eoo](images/eoo.png)
+
+Using TOPO30 Digital Elevation Map we clip EOO boundary to the altitude limits of the species. This way we obtain so-called Extent of Suitable Habitat, so all potential areas where species live and breed. On the illustration below we exaggerated the altitude limits, so that the picture is more clear.
+
+![esh](images/esh.png)
+
+The Global Forest Change map defines trees as any vegetation taller than 5 metres. Consequently, it also maps plantations, which we did not consider as suitable habitat. We removed these areas from our analysis, further reducing the extent of suitable habitat. The maps of concession areas were provided by the World Resources Institute and are in public domain. 
+
+![esh_concessions](images/ESH%20-%20concessions%20removed.png)
 
 ![diagram](algorithm.png?token=AFPv1fVwT39JenrwQi6h3yTRPbfXMdiQks5WE5piwA%3D%3D)
