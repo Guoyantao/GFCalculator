@@ -1,6 +1,4 @@
-**Table of Contents** 
-
-- [Global Forest Change calculator](#global-forest-change-calculator)
+- [Table of Contents](#global-forest-change-calculator)
   - [Overview](#overview)
   - [Global Forest Change map](#global-forest-change-map)
   - [Basics](#basics)
