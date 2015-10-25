@@ -62,6 +62,6 @@ The actual algorithm calculates forest loss for each year separately - the princ
 * Forest cover in 2000 within habitat of a given species.
 * Forest loss from 2001 till 2012 within habitat of a given species.
 
-From the forest loss one can infer habitat loss for forest-dependent species, but this part is beyond scope of the presented script. The described procedure is applied to all species as illustrated on a diagram below:
+From the forest loss one can infer habitat loss for forest-dependent species, but this part is beyond scope of the presented script. The described procedure is applied to all species as illustrated on a [flowchart](https://en.wikipedia.org/wiki/Flowchart) below:
 
 ![diagram](algorithm.png?token=AFPv1fVwT39JenrwQi6h3yTRPbfXMdiQks5WE5piwA%3D%3D)
