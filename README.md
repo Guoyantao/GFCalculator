@@ -58,6 +58,10 @@ Similar process applies to calculation of tree cover loss. Forest loss was defin
 
 ![esh_tree_loss](images/esh%20tree%20loss.jpg)
 
-The procedure is applied to all species as illustrated on a diagram below:
+The actual algorithm calculates forest loss for each year separately - the principles are the same. The output of the program constitutes of:
+* Forest cover in 2000 within habitat of a given species.
+* Forest loss from 2001 till 2012 within habitat of a given species.
+
+From the forest loss one can infer habitat loss for forest-dependent species, but this part is beyond scope of the presented script. The described procedure is applied to all species as illustrated on a diagram below:
 
 ![diagram](algorithm.png?token=AFPv1fVwT39JenrwQi6h3yTRPbfXMdiQks5WE5piwA%3D%3D)
