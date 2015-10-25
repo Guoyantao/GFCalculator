@@ -35,22 +35,26 @@ The algorithm of calculating tree cover in 2000 and forest loss is straightforwa
 
 Put simply, our script just counts GFC pixels within distribution of a species. Let's take as an example *Bubo sumatranus*, a [barred eagle-owl](https://en.wikipedia.org/wiki/Barred_eagle-owl). First, we load distribution map of the species:
 
-![eoo](images/eoo.png)
+![eoo](images/eoo.jpg)
 
 Using TOPO30 Digital Elevation Map we clip distribution map boundary to the altitude limits of the species. This way we obtain so-called Extent of Suitable Habitat, so all potential areas where species live and breed. On the illustration below we exaggerated the altitude limits, so that the picture is more clear.
 
-![esh](images/esh.png)
+![esh](images/esh.jpg)
 
 The Global Forest Change map defines trees as any vegetation taller than 5 metres. Consequently, it also maps plantations, which we did not consider as suitable habitat. We removed these areas from our analysis, further reducing the extent of suitable habitat. The maps of concession areas were provided by the World Resources Institute and are in public domain. Yellow colour denotes wood logging, ping wood fibre and brown oil palm.
 
-![concessions](images/concessions.png)
+![concessions](images/concessions.jpg)
 
 In turn we get so-called Extent of Suitable Habitat (ESH). The ESH is a maximum possible value for Area Of Occupancy.
 
-![esh_concessions](images/ESH%20-%20concessions%20removed.png)
+![esh_concessions](images/ESH%20-%20concessions%20removed.jpg)
 
 Now that we know the habitat range, we can start calculating forest extent and loss over years. The GFC map quantifies with 30 m accuracy the percentage of forest cover over given pixel. In other words, a single pixel represents an area 30 by 30 metres wide. On the illustration below shades of green denote tree cover values from 1 to 100, with 100 being the light green. Calculation of tree cover is then a simple matter of summing all pixels within the species area.
 
-![esh_tree_cover](images/esh%20tree%20cover.png)
+![esh_tree_cover](images/esh%20tree%20cover.jpg)
 
-![diagram](algorithm.png?token=AFPv1fVwT39JenrwQi6h3yTRPbfXMdiQks5WE5piwA%3D%3D)
+Similar process applies to calculation of tree cover loss. Forest loss was defined as a stand-replacement disturbance or the complete removal of tree cover canopy at the Landsat pixel scale. The GFC map has two layers representing "loss": one provides gross tree loss ("loss" band) from 2000 till 2012 and the other yearly loss ("lossyear" band). Illustration below presents the gross tree loss: pixels marked in red mean that tree cover was lost in the given area. Since for a given pixel loss could occur in any year between 2000 and 2012, we can only estimate the forest cover in 2012. In our study, we assumed that all the original tree cover from 2000 within the pixel was lost. In other words, if tree cover in a pixel in 2000 was 70% and it was marked as "loss", we assumed 70% loss by 2012. 
+
+![esh_tree_loss](images/esh%20tree%20loss.jpg)
+
+![diagram](algorithm.jpg?token=AFPv1fVwT39JenrwQi6h3yTRPbfXMdiQks5WE5piwA%3D%3D)
