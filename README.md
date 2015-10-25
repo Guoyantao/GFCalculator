@@ -1,11 +1,4 @@
 # Global Forest Change calculator
-[Table of contents:](#)
-- [Overview](Overview#)
-- [Global Forest Change map](Global Forest Change map#)
-- [Basics](Basics#)
-- [Usage](Usage#)
-- [Input](Input#)
-- [Algorithm](Algorithm#)
 
 ## Overview
 The script uses Hansen et al. (2013) Global Forest Change map in conjunction with Google Earth Engine to calculate forest cover in years 2000 - 2012 for a given set of species' distribution maps within provided altitude limits. 
