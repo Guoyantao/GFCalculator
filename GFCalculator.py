@@ -170,12 +170,16 @@ def run(asset_id, image_filename):
     pixel_areas_masked = ic.map(species)
     # Use exponential backoff to handle timeout errors
     mtries, mdelay = tries, delay
+    # If time-out occurs it means the calculations did not finish in the prescribed time. However,
+    # the calculations are still running. That's why we query for results again after certain time, e.g. 10s.
+    # If situation repeats, this time we try after longer period, e.g. 20s. We do a number of retries (e.g. 5),
+    # after which we give up. It's called exponential backoff.
     while True:
         try:
             return pixel_areas_masked.getInfo()['features']
         except ee.EEException, e:
-            if '500' in str(e):
-                raise
+            if '500' in str(e): # internal error ocurred
+                raise # no point in re-trying
             mtries -= 1
             if mtries == 0:
                 raise Exception('Number of retries exceeded. I give up!')
