@@ -68,8 +68,7 @@ lossYear = lossYear.where(concessions, 0);
 gainImage = gainImage.where(concessions, 0);
 
 # Find pixels in which only gain occurred
-gainAndLoss = gainImage.And(lossImage)
-gainOnly = gainImage.And(gainAndLoss.Not())
+gainOnly = gainImage.And(lossImage.Not())
 
 #tree30 = forest2000.gte(0.3);
 #forest2000 = forest2000.mask(tree30)
