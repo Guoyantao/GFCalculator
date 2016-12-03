@@ -1,5 +1,7 @@
 # Global Forest Change calculator
 
+The provided code has been used to generate data for our paper in Conservation Biology: [Toward quantification of the impact of 21st-century deforestation on the extinction risk of terrestrial vertebrates] (http://onlinelibrary.wiley.com/doi/10.1111/cobi.12715/abstract)
+
 ## Contents
   - [Overview](#overview)
   - [Google Earth Engine](#google-earth-engine)
